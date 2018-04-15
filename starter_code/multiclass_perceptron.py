@@ -15,7 +15,6 @@ and shapes for different labels) as well as the decision region.
 
 """
 
-
 import numpy as np
 import matplotlib.pyplot as plt
 import random
@@ -36,21 +35,24 @@ def multi_perceptron(data, labels):
 	"""
 	Setting: X = Rd and Y = {1,2,...,k}
 	Model: w1,...,wk ∈ Rd and b1,...,bk ∈ R
-	Initialize k w-vectors in d-dimensions and k b-values to 0
-
-	Repeat while some training point (x, y) is misclassified:
-	(keep in mind that the selection must be random)
-			Classify (label) a point x using w and b.
-			Check if the prediction matches the actual label. If not:
-				for correct label y:
-				 - w[y] = w[y] + x
-				 - b[y] = b[y] + 1
-				for incorrect label y_:
-				 - w[y_] = w[y_] - x
-				 - b[y_] = b[y_] - 1
+	Description: Creates a multi-class Perceptron model.
 	"""
 	# TODO Your code here. Hopefully the comments above will 
 	# lead you in the right direction.
+
+	# 1) Initialize k w-vectors in d-dimensions and k b-values to 0
+	# 2) Loop through the entire data set while some training point
+	# (x, y), i.e. (data point, label) is misclassified.
+	# 	a) Predict a data point x using w and b (call your label
+	# 	function).
+	# 	b) Check if the prediction matches the actual label. If so,
+	# 	do nothing. If not:
+	#		aa) for the correct label y:
+	#			 - w[y] = w[y] + x
+	#			 - b[y] = b[y] + 1
+	#			for incorrect label y_:
+	#			 - w[y_] = w[y_] - x
+	#			 - b[y_] = b[y_] - 1
 
 	return w, b
 

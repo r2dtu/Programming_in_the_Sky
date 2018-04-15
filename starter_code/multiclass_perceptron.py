@@ -38,7 +38,7 @@ def multi_perceptron(data, labels):
 	Model: w1,...,wk ∈ Rd and b1,...,bk ∈ R
 	Initialize k w-vectors in d-dimensions and k b-values to 0
 
-	Repeat while some training point (x,y) is misclassified:
+	Repeat while some training point (x, y) is misclassified:
 	(keep in mind that the selection must be random)
 			Classify (label) a point x using w and b.
 			Check if the prediction matches the actual label. If not:

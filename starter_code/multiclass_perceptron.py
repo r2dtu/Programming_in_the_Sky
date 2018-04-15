@@ -29,6 +29,10 @@ def label(w, b, x):
 		Prediction: On instance x, predict label arg maxj (wj · x + bj )
 	"""
 	# TODO <YOUR CODE HERE>
+	# Create an array to store the results of each dot product.
+	# Loop through w and b (i.e. with j as your counter)
+	# 	a) Calculate wj · x + bj, and record the result.
+	# Return the index of the largest result.
 
 
 def multi_perceptron(data, labels):

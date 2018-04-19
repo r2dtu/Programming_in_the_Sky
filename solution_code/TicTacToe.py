@@ -61,11 +61,11 @@ def humanTurn( symbol ):
 	"""
 	Parameters:	symbol - which character to display for the human
 	Description: 	Executes the human's turn. The command line will ask
-			you to input a row and a column. Then it will check whether 
-			the square has already been occupied. If yes, it will ask 
-			you again to input another row and col. If it is valid, it 
-			will place your piece onto the board and print it. It also 
-			checks whether you wins the game if you place your piece in 
+			you to input a row and a column. Then it will check whether
+			the square has already been occupied. If yes, it will ask
+			you again to input another row and col. If it is valid, it
+			will place your piece onto the board and print it. It also
+			checks whether you wins the game if you place your piece in
 			that square.
 	Returns:	True if you win the game. False otherwise.
 	"""
@@ -74,7 +74,7 @@ def humanTurn( symbol ):
 	col = int(col)
 	while( validMove(row, col) is False ):
 		print("Sorry that cell is already occupied. Please try again.")
-		row, col = input("nEnter your move: (row column):").split()
+		row, col = input("Enter your move: (row column):").split()
 		row = int(row)
 		col = int(col)
 
@@ -91,10 +91,10 @@ def humanTurn( symbol ):
 def computerTurn( symbol ):
 	"""
 	Parameters:	symbol - which character to display for the human
-	Description:	Executes the computer's turn. It will generate a random 
+	Description:	Executes the computer's turn. It will generate a random
 			move for the computer. Just like with the human move,
-			if the move is valid, it will place the piece onto the 
-			board and print it. It also checks whether computer wins 
+			if the move is valid, it will place the piece onto the
+			board and print it. It also checks whether computer wins
 			the game.
 
 	Returns:	True if the computer wins the game. False otherwise.
@@ -117,7 +117,7 @@ def computerTurn( symbol ):
 
 def humanFirst():
 	"""
-	Description:	Called if the human player goes first. Loop between human 
+	Description:	Called if the human player goes first. Loop between human
 			and computer turns and constantly check if the return
 			value from those is True, signifying that the game is over.
 	"""
@@ -133,9 +133,9 @@ def humanFirst():
 
 def computerFirst():
 	"""
-	Description:	Called if the computer player goes first. Loop between 
-			human and computer turns and constantly check if the 
-			return value from those is True, signifying that the game 
+	Description:	Called if the computer player goes first. Loop between
+			human and computer turns and constantly check if the
+			return value from those is True, signifying that the game
 			is over.
 	"""
 	computerTurn("x")
@@ -151,7 +151,7 @@ def computerFirst():
 def main():
 	"""
 	Description:	Runs the main program. Determines whether the human or
-			computer player goes first by generating a random number 
+			computer player goes first by generating a random number
 			between 0 and 1. If it is 0, then human goes first,
 			otherwise the computer player goes first.
 	"""

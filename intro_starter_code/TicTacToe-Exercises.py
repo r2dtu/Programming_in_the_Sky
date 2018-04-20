@@ -52,7 +52,7 @@ def validMove(row, col):
 				 return True if the given square is "_" meaning no piece
 				 occupied it. False otherwise.
 	"""
-	#TODO Should be one line of code! Look in function description for more hints
+	#TODO Look in function description for more hints
 
 def playerTurn( symbol ):
 	"""
@@ -76,7 +76,7 @@ def playerTurn( symbol ):
 		col = int(col)
 
     #TODO Update board with inputted move
-	
+
 	printBoard()
 
 	if isWon(symbol):

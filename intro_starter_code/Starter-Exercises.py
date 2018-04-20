@@ -44,7 +44,7 @@ Variables
 
 # TODO Print 'the sky' using the variables whats and up
 whats = "the "
-up = 'sky"
+up = "sky"
 
 # TODO Print 5 using the two variables
 two = "2"

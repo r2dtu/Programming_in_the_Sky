@@ -57,7 +57,3 @@ print(hello) # DO NOT DELETE OR CHANGE THIS LINE
 # TODO Print "My move is 0, 0" using row and col
 row = 1
 col = 2
-
-# TODO Print "My move is 0, 0" using row and col WITHOUT changing row and col
-row = 1
-col = 2

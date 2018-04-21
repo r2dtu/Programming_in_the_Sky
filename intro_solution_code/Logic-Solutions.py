@@ -1,5 +1,6 @@
 """
-File: Logic-Exercises
+File: Logic-Solutions
+
 Description: Part of the IEEExHKN Programming in the Sky Workshop on April
 		     22, 2018. This file tests your understanding of python logic.
              (True, False, and, or, not)

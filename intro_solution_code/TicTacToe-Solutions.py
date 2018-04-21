@@ -1,9 +1,9 @@
 """
-File: 		TicTacToe.py
-Description: 	Part of the IEEExHKN Programming in the Sky Workshop on April
-		22, 2018. This file runs a Tic Tac Toe game, where a player
-		will play against an automated computer player.
-Editor:		<YOUR NAME>
+File: TicTacToe.py
+Description: Part of the IEEExHKN Programming in the Sky Workshop on April
+		     22, 2018. This file runs a Tic Tac Toe game, where a player
+		     will play against an automated computer player.
+Editor:	Antony Nguyen, Godwin Pang
 """
 
 from random import *
@@ -19,7 +19,11 @@ def printBoard():
 	"""
 	Description:	Print the board with updated pieces.
 	"""
-	print(' ' + board[0][0] + ' | ' + board[0][1] + ' | ' + board[0][2])
+
+    #TODO Modify the code below so that the actual values of the board
+    #     are printed
+
+    print(' ' + board[0][0] + ' | ' + board[0][1] + ' | ' + board[0][2])
 	print('-----------')
 	print(' ' + board[1][0] + ' | ' + board[1][1] + ' | ' + board[1][2])
 	print('-----------')
@@ -29,11 +33,12 @@ def printBoard():
 def isWon(player):
 	"""
 	Parameters:	player - x or o, indicating which character to check
-	Description:	Checks if the player has won the game. This is done by
-			checking each row, col and diagonal.
+	Description: Checks if the player has won the game. This is done by
+				 checking each row, col and diagonal.
 	Returns:	True if the player wins the game, False otherwise.
-	"""
-	for i in range(3):
+    """
+
+    for i in range(3):
 		if board[i][0] == player and board[i][1] == player and board[i][2] == player:
 			return True
 
@@ -52,12 +57,13 @@ def isWon(player):
 def validMove(row, col):
 	"""
 	Description: check the given row and col is valid - no piece on that square
-	return True if the given square is "_" meaning no piece occupied it
-	False otherwise.
+				 return True if the given square is "_" meaning no piece
+				 occupied it. False otherwise.
 	"""
-	return board[row][col] is "_"
 
-def humanTurn( symbol ):
+    return board[row][col] is "_"
+
+def playerTurn( symbol ):
 	"""
 	Parameters:	symbol - which character to display for the human
 	Description: 	Executes the human's turn. The command line will ask
@@ -78,75 +84,15 @@ def humanTurn( symbol ):
 		row = int(row)
 		col = int(col)
 
-	board[row][col] = symbol
+    #TODO Update board with inputted move
+
 	printBoard()
 
 	if isWon(symbol):
-		print("You Won!")
+		print("Player "+symbol+" Won!")
 		return True
 	else:
 		return False
-
-
-def computerTurn( symbol ):
-	"""
-	Parameters:	symbol - which character to display for the human
-	Description:	Executes the computer's turn. It will generate a random
-			move for the computer. Just like with the human move,
-			if the move is valid, it will place the piece onto the
-			board and print it. It also checks whether computer wins
-			the game.
-
-	Returns:	True if the computer wins the game. False otherwise.
-	"""
-	row = randint(0, 2)
-	col = randint(0, 2)
-	while( validMove(row, col) is False ):
-		row = randint(0, 2)
-		col = randint(0, 2)
-
-	print("My move is {} {}".format(row, col))
-	board[row][col] = symbol
-	printBoard()
-	if isWon(symbol):
-		print("I won!")
-		return True
-	else:
-		return False
-
-
-def humanFirst():
-	"""
-	Description:	Called if the human player goes first. Loop between human
-			and computer turns and constantly check if the return
-			value from those is True, signifying that the game is over.
-	"""
-	for i in range(4):
-		if humanTurn("x") is True:
-			break
-		if computerTurn("o") is True:
-			break
-	else:
-		if humanTurn("x") is False:
-			print("A tie!")
-
-
-def computerFirst():
-	"""
-	Description:	Called if the computer player goes first. Loop between
-			human and computer turns and constantly check if the
-			return value from those is True, signifying that the game
-			is over.
-	"""
-	computerTurn("x")
-	for i in range(4):
-		if humanTurn("o") is True:
-			break
-		if computerTurn("x") is True:
-			break
-	else:
-		print("A tie!")
-
 
 def main():
 	"""
@@ -155,13 +101,15 @@ def main():
 			between 0 and 1. If it is 0, then human goes first,
 			otherwise the computer player goes first.
 	"""
-	move = randint(0,1)
-	if move is 0:
-		print("You start first. You get x and I get o")
-		humanFirst()
-	else:
-		print("I start first. I get x and you get o")
-		computerFirst()
 
-# Run the Tic-Tac-Toe program
+    # Call functions to run game
+	for i in range(4):
+		if playerTurn('x'):
+			break
+		if playerTurn('o'):
+			break
+	else:
+		if not playerTurn('x'):
+			print("A tie!")
+
 main()

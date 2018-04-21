@@ -1,5 +1,5 @@
 """
-File: Starter-Exercises
+File: Starter-Solutions
 Description: Part of the IEEExHKN Programming in the Sky Workshop on April
 		     22, 2018. This file simply contains a few quick warmup exercises.
 Editor:	Antony Nguyen, Godwin Pang

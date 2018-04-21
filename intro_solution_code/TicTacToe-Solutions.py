@@ -1,5 +1,5 @@
 """
-File: TicTacToe-Exercises.py
+File: TicTacToe.py
 Description: Part of the IEEExHKN Programming in the Sky Workshop on April
 		     22, 2018. This file runs a Tic Tac Toe game, where a player
 		     will play against an automated computer player.
@@ -23,11 +23,12 @@ def printBoard():
     #TODO Modify the code below so that the actual values of the board
     #     are printed
 
-	print(' ' + ' | ' + ' | ')
+	print(' ' + board[0][0] + ' | ' + board[0][1] + ' | ' + board[0][2])
 	print('-----------')
-	print(' ' + ' | ' + ' | ')
+	print(' ' + board[1][0] + ' | ' + board[1][1] + ' | ' + board[1][2])
 	print('-----------')
-	print(' ' + ' | ' + ' | ')
+	print(' ' + board[2][0] + ' | ' + board[2][1] + ' | ' + board[2][2])
+
 
 def isWon(player):
 	"""
@@ -35,49 +36,55 @@ def isWon(player):
 	Description: Checks if the player has won the game. This is done by
 				 checking each row, col and diagonal.
 	Returns:	True if the player wins the game, False otherwise.
-        """
+    """
 
-	# Hints: 3
+	for i in range(3):
+		if board[i][0] == player and board[i][1] == player and board[i][2] == player:
+			return True
 
-	#TODO Check Rows
+	for i in range(3):
+		if board[0][i] == player and board[1][i] == player and board[2][i] == player:
+			return True
 
-	#TODO Check Columns
+	if board[0][0] == player and board[1][1] == player and board[2][2] == player:
+		return True
 
-	#TODO Check Diagonals
+	if board[0][2] == player and board[1][1] == player and board[2][0] == player:
+		return True
 
+	return False
 
-
-#TODO write method called validMove that takes in parameters row and col.
+def validMove(row, col):
 	"""
-        Description: check the given row and col is valid - no piece on that
-                     square return True if the given square is "_" meaning no
-                     piece occupied it. False otherwise.
+	Description: check the given row and col is valid - no piece on that square
+				 return True if the given square is "_" meaning no piece
+				 occupied it. False otherwise.
 	"""
-	#TODO Look in function description for more hints
 
-
+	return board[row][col] is "_"
 
 def updateBoard(row, col, symbol):
     """
     Parameters: row - row number of cell to update
                 col - col number of cell to update
                 symbol - symbol to update cell with
+	Description: Updates cell at specified row and col with specified symbol
     """
     board[row][col] = symbol
 
-def playerTurn(symbol):
+def playerTurn( symbol ):
 	"""
 	Parameters:	symbol - which character to display for the human
 	Description: 	Executes the human's turn. The command line will ask
-			you to input a row and a column. Then it will check
-                        whether the square has already been occupied. If yes,
-                        it will ask you again to input another row and col. If
-                        it is valid, it will place your piece onto the board and
-                        print it. It also checks whether you wins the game if
-                        you place your piece in that square.
+			you to input a row and a column. Then it will check whether
+			the square has already been occupied. If yes, it will ask
+			you again to input another row and col. If it is valid, it
+			will place your piece onto the board and print it. It also
+			checks whether you wins the game if you place your piece in
+			that square.
 	Returns:	True if you win the game. False otherwise.
 	"""
-	row, col = input("Enter your move: (row column):").split()
+	row, col = input("Enter your move, player "+symbol+": (row column):").split()
 	row = int(row)
 	col = int(col)
 	while( validMove(row, col) is False ):
@@ -86,7 +93,7 @@ def playerTurn(symbol):
 		row = int(row)
 		col = int(col)
 
-    #TODO Call update board with the inputted row, col, and symbol
+	updateBoard(row, col, symbol)
 
 	printBoard()
 
@@ -104,13 +111,14 @@ def main():
 			otherwise the computer player goes first.
 	"""
 
+    # Call functions to run game
 	for i in range(4):
-            if (playerTurn("x")):
-                break
-            if (playerTurn("o")):
-                break
+		if playerTurn('x'):
+			break
+		if playerTurn('o'):
+			break
 	else:
-            if not(playerTurn("x")):
-                print("A tie!")
+		if not playerTurn('x'):
+			print("A tie!")
 
 main()

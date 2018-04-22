@@ -35,7 +35,7 @@ def isWon(player):
 	Description: Checks if the player has won the game. This is done by
 				 checking each row, col and diagonal.
 	Returns:	True if the player wins the game, False otherwise.
-    """
+        """
 
 	# Hints: 3
 
@@ -46,24 +46,35 @@ def isWon(player):
 	#TODO Check Diagonals
 
 
-def validMove(row, col):
+
+#TODO write method called validMove that takes in parameters row and col.
 	"""
-	Description: check the given row and col is valid - no piece on that square
-				 return True if the given square is "_" meaning no piece
-				 occupied it. False otherwise.
+        Description: check the given row and col is valid - no piece on that
+                     square return True if the given square is "_" meaning no
+                     piece occupied it. False otherwise.
 	"""
 	#TODO Look in function description for more hints
 
-def playerTurn( symbol ):
+
+
+def updateBoard(row, col, symbol):
+    """
+    Parameters: row - row number of cell to update
+                col - col number of cell to update
+                symbol - symbol to update cell with
+    """
+    board[row][col] = symbol
+
+def playerTurn(symbol):
 	"""
 	Parameters:	symbol - which character to display for the human
 	Description: 	Executes the human's turn. The command line will ask
-			you to input a row and a column. Then it will check whether
-			the square has already been occupied. If yes, it will ask
-			you again to input another row and col. If it is valid, it
-			will place your piece onto the board and print it. It also
-			checks whether you wins the game if you place your piece in
-			that square.
+			you to input a row and a column. Then it will check
+                        whether the square has already been occupied. If yes,
+                        it will ask you again to input another row and col. If
+                        it is valid, it will place your piece onto the board and
+                        print it. It also checks whether you wins the game if
+                        you place your piece in that square.
 	Returns:	True if you win the game. False otherwise.
 	"""
 	row, col = input("Enter your move: (row column):").split()
@@ -75,7 +86,7 @@ def playerTurn( symbol ):
 		row = int(row)
 		col = int(col)
 
-    #TODO Update board with inputted move
+    #TODO Call update board with the inputted row, col, and symbol
 
 	printBoard()
 
@@ -93,14 +104,13 @@ def main():
 			otherwise the computer player goes first.
 	"""
 
-    #TODO Call functions to run game
 	for i in range(4):
-		if:
-			break
-		if:
-			break
+            if (playerTurn("x")):
+                break
+            if (playerTurn("o")):
+                break
 	else:
-		if not:
-			print("A tie!")
+            if not(playerTurn("x")):
+                print("A tie!")
 
 main()

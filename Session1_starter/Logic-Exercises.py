@@ -6,6 +6,8 @@ Description: Part of the IEEExHKN Programming in the Sky Workshop on April
 Editor:	Antony Nguyen, Godwin Pang
 """
 
+# TODO Replace all of the '''''' to make the statements true.
+
 # TODO  Exercise 1
 if (not(True is '''''')): # Fill this line out
     print("You passed Exercise 1")
@@ -35,5 +37,3 @@ if ((False or not False) is ''''''): # Fill this line out
     print("You passed Exercise 5")
 else:
     print("You failed Exercise 5")
-
-# TODO  Write your own if / else in TicTacToe-Exercises.py (validMove())

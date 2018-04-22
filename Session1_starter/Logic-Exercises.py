@@ -3,7 +3,7 @@ File: Logic-Exercises
 Description: Part of the IEEExHKN Programming in the Sky Workshop on April
 		     22, 2018. This file tests your understanding of python logic.
              (True, False, and, or, not)
-Editor:	Antony Nguyen, Godwin Pang
+Author:	Antony Nguyen, Godwin Pang
 """
 
 # TODO Replace all of the '''''' to make the statements true.

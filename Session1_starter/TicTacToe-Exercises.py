@@ -3,7 +3,7 @@ File: TicTacToe-Exercises.py
 Description: Part of the IEEExHKN Programming in the Sky Workshop on April
 		     22, 2018. This file runs a Tic Tac Toe game, where a player
 		     will play against an automated computer player.
-Editor:	Antony Nguyen, Godwin Pang
+Author:	Antony Nguyen, Godwin Pang
 """
 
 from random import *

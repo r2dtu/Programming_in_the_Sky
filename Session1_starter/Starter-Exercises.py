@@ -2,7 +2,7 @@
 File: Starter-Exercises
 Description: Part of the IEEExHKN Programming in the Sky Workshop on April
 	     22, 2018. This file simply contains a few quick warmup exercises.
-Editor:	Antony Nguyen, Godwin Pang
+Author:	Antony Nguyen, Godwin Pang
 """
 
 """

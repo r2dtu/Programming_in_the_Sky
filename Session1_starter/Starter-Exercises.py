@@ -2,7 +2,7 @@
 File: Starter-Exercises
 Description: Part of the IEEExHKN Programming in the Sky Workshop on April
 	     22, 2018. This file simply contains a few quick warmup exercises.
-Author:	Antony Nguyen, Godwin Pang
+Editor:	Antony Nguyen, Godwin Pang
 """
 
 """
@@ -74,6 +74,7 @@ list3 = [1,1]
 #     to 4 inclusive
 
 # Code goes directly below this line and above the if statement
+newlist1 = []
 
 if(newlist1 == list1):
     print("You passed List Comprehension Exercise 1")
@@ -84,6 +85,7 @@ else:
 #     list2
 
 # Code goes directly below this line and above the if statement
+newlist2 = []
 
 if(newlist2 == list3):
     print("You passed List Comprehension Exercise 2")

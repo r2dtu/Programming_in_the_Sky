@@ -1,4 +1,4 @@
-# Programming-in-the-Sky-code
+# Programming in the Sky 2018
 [04/22] Updated with solution code.
 [04/20] Starter code for the Programming in the Sky Workshop 2018 (both sessions).
 
